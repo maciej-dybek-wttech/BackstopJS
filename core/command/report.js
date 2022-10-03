@@ -53,12 +53,12 @@ function writeReport (config, reporter) {
     promises.push(writeJunitReport(config, reporter));
   }
 
-  console.log('PROCESSING REPORT', config.report);
+  logger.log('PROCESSING REPORT', config.report);
   if (config.report && config.report.indexOf('json') > -1) {
     promises.push(writeJsonReport(config, reporter));
   }
 
-  console.log('PROCESSING OTHER REPORTS', config.report);
+  logger.log('PROCESSING OTHER REPORTS', config.report);
   promises.push(writeBrowserReport(config, reporter));
   promises.push(processCustomReports(config, reporter));
 
@@ -95,7 +95,7 @@ function writeBrowserReport (config, reporter) {
     return (path.isAbsolute(p)) ? p : path.join(config.projectPath, p);
   }
 
-  logger.log('Writing browser report');
+  logger.log('Writing browser report111');
 
   return fs.copy(config.comparePath, toAbsolute(config.html_report)).then(function () {
     // Slurp in logs
