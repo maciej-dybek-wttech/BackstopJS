@@ -26,7 +26,7 @@ function replaceInFile (file, search, replace) {
 }
 
 async function processCustomReports (config, reporter) {
-  console.log("PROCESSING CUSTOM REPORT", config)
+  console.log('PROCESSING CUSTOM REPORT', config);
   const engineScriptsPath = config.engine_scripts;
   const customReports = config.customReports.reports;
   const results = [];
